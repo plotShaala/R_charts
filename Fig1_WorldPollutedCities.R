@@ -1,19 +1,8 @@
-#===============
-# Good stuff:
-#===============
-# change colors of geom segment and point
-# Get colors right
-#===============
-# References:
-#===============
-
-
 library(ggplot2)
 library(ggthemes)
 library(dplyr)
 
 # Variables
-
 countryColor <- c("#758D99", "#EC111A") 
 titleColor <- "#EC111A"
 labelFiller <- "#98DAFF"
@@ -21,7 +10,7 @@ displayResolution <- 600
 
 
 # set working directory and read the file
-setwd("/Users/sanjaynoronha/Desktop/R")
+setwd("<details of file path>")
 df <- read.csv("Fig1_WorldPollutedCities.csv")
 df <- df %>% arrange(desc(ranking))
 
