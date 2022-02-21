@@ -14,3 +14,7 @@ List of worlds 15 most polluted cities in 2020
 References:
 - https://medium.economist.com/charting-new-territory-7f5afb293270
 - https://www.iqair.com/world-most-polluted-cities-
+
+## Figure 2
+How India fares in the democracy index ; 2006 - 2021
+References: EIU
