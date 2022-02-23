@@ -3,6 +3,7 @@
  - https://www.eiu.com/
  - https://rbi.org.in/Scripts/Statistics.aspx
  - https://data.worldbank.org/
+ - https://worldpopulationreview.com/
 
 # Branding ideas
 We want our charts to be recognisable as coming from 'our Instagram handle', and to stand out in feeds
