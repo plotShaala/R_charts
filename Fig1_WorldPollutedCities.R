@@ -2,7 +2,7 @@ library(ggplot2)
 library(ggthemes)
 library(dplyr)
 
-# Variables
+# Variable
 countryColor <- c("#758D99", "#EC111A") 
 titleColor <- "#EC111A"
 labelFiller <- "#98DAFF"
