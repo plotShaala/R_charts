@@ -1,5 +1,5 @@
 
-# References
+# Reference
 # https://stackoverflow.com/questions/14604435/turning-off-some-legends-in-a-ggplot
 
 
