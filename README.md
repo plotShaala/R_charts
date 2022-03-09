@@ -5,6 +5,8 @@
  - https://data.worldbank.org/
  - https://worldpopulationreview.com/
 
+# Reference Video
+ https://www.youtube.com/watch?v=qQNXe-fP_Ek //to understand how to configure token + keychain access
 # Branding ideas
 We want our charts to be recognisable as coming from 'our Instagram handle', and to stand out in feeds
 We could use red (#EC111A) as the main or highlight colour, with more subtle blues/greys as the secondary colours. There are exceptions such as political charts which use party colours, or some maps where colours might have specific associations
