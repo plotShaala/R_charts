@@ -3,9 +3,10 @@ library(ggthemes)
 library(dplyr)
 
 # Variable
-countryColor <- c("#758D99", "#EC111A") 
-titleColor <- "#EC111A"
-labelFiller <- "#98DAFF"
+countryColor <- c(China = "#D4DC41", India = "#008F81") 
+titleColor <- "#05648A"
+subTitleColor <- "#037C8C"  
+labelFiller <- "#02C39A"  
 displayResolution <- 600
 
 
@@ -30,7 +31,7 @@ df
 p <- ggplot(df, aes(x=value, y=city)) +
     geom_segment( aes(x=0, xend= value, y= city, yend= city, color= country) ) +
     geom_point( aes(color= country), size = 3.25) +
-    annotate("label", x = 120 , y =  df$city,  label = df$value,  size = 3, fontface = "bold", fill = labelFiller) +
+    annotate("label", x = 120 , y =  df$city,  label = df$value,  size = 2.5, fontface = "bold", fill = labelFiller) +
     scale_color_manual(values = countryColor) + 
   
 theme_clean() +
@@ -48,6 +49,7 @@ labs(
   theme(
     plot.caption = element_text(hjust=c(1, 0))
     , plot.title = element_text(colour = titleColor)
+    , plot.subtitle = element_text(colour = subTitleColor)
   ) +
   
   theme(
@@ -69,4 +71,4 @@ labs(
   ) 
   
 
-ggsave(plot = p, width = 3.6, height = 3.2,  dpi = displayResolution, filename = "Fig1_WorldPollutedCities.png")
+ggsave(plot = p, width = 5.6, height = 4.8,  dpi = displayResolution, filename = "Fig1_WorldPollutedCities.png")
