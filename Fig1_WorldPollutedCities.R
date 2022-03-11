@@ -3,10 +3,10 @@ library(ggthemes)
 library(dplyr)
 
 # Variable
-countryColor <- c(China = "#D4DC41", India = "#008F81") 
-titleColor <- "#05648A"
-subTitleColor <- "#037C8C"  
-labelFiller <- "#02C39A"  
+countryColor <- c(China = "#02C39A", India = "#05648A") 
+titleColor <- "#444444"
+subTitleColor <- "#444444"  
+labelFiller <- "#D4DC41"  
 displayResolution <- 600
 
 
@@ -31,10 +31,10 @@ df
 p <- ggplot(df, aes(x=value, y=city)) +
     geom_segment( aes(x=0, xend= value, y= city, yend= city, color= country) ) +
     geom_point( aes(color= country), size = 3.25) +
-    annotate("label", x = 120 , y =  df$city,  label = df$value,  size = 2.5, fontface = "bold", fill = labelFiller) +
+    annotate("label", x = 120 , y =  df$city,  label = df$value,  size = 2.5, fontface = "bold", fill = labelFiller, colour = "#444444") +
     scale_color_manual(values = countryColor) + 
   
-theme_clean() +
+theme_fivethirtyeight() +
 
 # THEME SECTION
   
@@ -47,14 +47,14 @@ labs(
 ) +
   
   theme(
-    plot.caption = element_text(hjust=c(1, 0))
-    , plot.title = element_text(colour = titleColor)
-    , plot.subtitle = element_text(colour = subTitleColor)
+    plot.caption = element_text(hjust=c(1, 0), colour = subTitleColor)
+    , plot.title = element_text(colour = titleColor, hjust = 0.5)
+    , plot.subtitle = element_text(colour = subTitleColor, hjust = 0.5)
   ) +
   
   theme(
     panel.grid.major.x =   element_blank()
-    , panel.grid.major.y =  element_blank()
+    , panel.grid.major.y =  element_line(size = 0.2)
     , panel.grid.minor.x =  element_blank()
     , panel.grid.minor.y = element_blank()
   ) +
@@ -62,6 +62,8 @@ labs(
   theme(
     axis.ticks = element_blank()
     , axis.text.x = element_blank() 
+    , axis.title.x=element_text(colour="#444444")
+    , axis.title.y=element_text(colour="#444444")
   ) +
   
   theme(
@@ -71,4 +73,4 @@ labs(
   ) 
   
 
-ggsave(plot = p, width = 5.6, height = 4.8,  dpi = displayResolution, filename = "Fig1_WorldPollutedCities.png")
+ggsave(plot = p, width = 6.4, height = 5.6,  dpi = displayResolution, filename = "Fig1_WorldPollutedCities.png")
