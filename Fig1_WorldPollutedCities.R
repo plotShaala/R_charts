@@ -5,7 +5,7 @@ library(dplyr)
 # Variable
 countryColor <- c(China = "#02C39A", India = "#05648A") 
 titleColor <- "#444444"
-subTitleColor <- "#444444"  
+footerColor <- "#888888"  
 labelFiller <- "#D4DC41"  
 displayResolution <- 600
 
@@ -47,9 +47,9 @@ labs(
 ) +
   
   theme(
-    plot.caption = element_text(hjust=c(1, 0), colour = subTitleColor)
+    plot.caption = element_text(hjust=c(1, 0), colour = footerColor)
     , plot.title = element_text(colour = titleColor, hjust = 0.5)
-    , plot.subtitle = element_text(colour = subTitleColor, hjust = 0.5)
+    , plot.subtitle = element_text(colour = titleColor, hjust = 0.5)
   ) +
   
   theme(
