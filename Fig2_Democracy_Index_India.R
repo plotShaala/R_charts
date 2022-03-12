@@ -5,12 +5,12 @@ library(ggthemes)
 library(dplyr)
 
 # Variables
-partyColor <- c(Congress = "#02C39A",  BJP = "#D4DC41")
+partyColor <- c(Congress = "#D7D9CE",  BJP = "#119DA4")
 titleColor <- "#444444"
 footerColor <- "#888888" 
 displayResolution <- 600
-lineColor <- "#02C39A"
-pointColor <- "#05648A" 
+lineColor <- "#13505B"
+pointColor <- "#040404" 
 
 
 # set working directory and read the file
