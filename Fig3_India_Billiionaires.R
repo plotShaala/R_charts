@@ -10,14 +10,16 @@ library(dplyr)
 
 
 # Variables
-partyColor <- c(BJP = "#B2B7C0",  Congress ="#D7D7D7")
-personColor <- c(MD = "#EC111A", MA = "#00588D", GA = "#5DA4DF" )
-titleColor <- "#EC111A"
+partyColor <- c(Congress = "#D7D9CE",  BJP = "#119DA4")
+personColor <- c(MD = "#040404", MA = "#0C7489", GA = "#13505B" )
+titleColor <- "#444444"
+footerColor <- "#888888" 
 displayResolution <- 600
 
 
+
 # set working directory and read the file
-setwd("/Users/sanjaynoronha/Desktop/R")
+setwd("/Users/sanjaynoronha/Desktop/R/Github/R_charts")
 df <- read.csv("Fig3_India_Billiionaires.csv")
 
 # print the file to see the contents
@@ -48,32 +50,33 @@ p <- ggplot(df, aes(x=year, y= worth)) +
   MA="Mukesh Ambani", GA="Gautam Adani"))+
   
   # annotation for the name of political party 
-  annotate("text", x = 2008, y = 90, label ="Congress", hjust = 0, size = 6, fontface = "bold")+
-  annotate("text", x = 2014, y = 90, label ="BJP", hjust = 0, size = 6, fontface = "bold")+
+  annotate("text", x = 2008, y = 90, label ="Congress", hjust = 0, size = 5, colour = titleColor) +
+  annotate("text", x = 2014, y = 90, label ="BJP", hjust = 0, size = 5, colour = titleColor) +
   
   #manually configuring the y axis range
   ylim(0, 100) +
 
   
   # this is our base theme
-  theme_clean() +
+  theme_fivethirtyeight() +
   
   # customize the base theme
   labs(
     title = "Stairway to Heaven"
-   , subtitle = "Yearly worth ($billion) - Mukesh Ambani, Gautam Adani and the median worth\nof India's top 10 billionaires"
+   , subtitle = "Yearly worth ($billion) - Mukesh Ambani, Gautam Adani v. the median worth\nof India's top 10 billionaires"
     , caption = c("Instagram: @plotShaala", "Source: Forbes" )
   ) +
   
+  
   theme(
-    plot.caption = element_text(hjust=c(1, 0))
-    , plot.title = element_text(colour = titleColor, size = 18)
-    , plot.subtitle  = element_text(size = 12)
+    plot.caption = element_text(hjust=c(1, 0), colour = footerColor)
+    , plot.title = element_text(colour = titleColor, hjust = 0.5)
+    , plot.subtitle = element_text(colour = titleColor, hjust = 0.5)
   ) +
   
   theme(
-    panel.grid.major.x =   element_line( size = 0.1, color = "gray60")
-    , panel.grid.major.y =  element_blank()
+    panel.grid.major.y =  element_blank()
+    , panel.grid.major.x =  element_line(size = 0.15)
     , panel.grid.minor.x =  element_blank()
     , panel.grid.minor.y = element_blank()
   ) +
@@ -86,9 +89,9 @@ p <- ggplot(df, aes(x=year, y= worth)) +
     legend.title = element_blank()
     , legend.position= "bottom"
     , legend.background = element_blank()
-  ) 
+  ) +
 
-
+theme(axis.title = element_text(size = 10)) + ylab('Worth ($billion)') + xlab('Year')
 
 # save plot in high resolution
 ggsave(plot = p,  width = 7.2, height = 6.4 ,dpi = displayResolution, filename = "Fig3_Billionaires_India.png")
