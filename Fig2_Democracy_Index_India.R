@@ -9,7 +9,7 @@ partyColor <- c(Congress = "#D7D9CE",  BJP = "#119DA4")
 titleColor <- "#444444"
 footerColor <- "#888888" 
 displayResolution <- 600
-lineColor <- "#13505B"
+lineColor <- "#0C7489"
 pointColor <- "#040404" 
 
 
@@ -25,7 +25,7 @@ p <- ggplot(df, aes(x=year, y= rank)) +
   geom_rect(data = df, aes(xmin = year, xmax = year_end, fill = party), ymin =-Inf, ymax = Inf, alpha = 0.2) +
   geom_text(aes(label = rank), vjust = - 1.6) +
   geom_line(colour = lineColor) +
-  geom_point(size = 3, colour = pointColor) +
+  geom_point(size = 2.75, colour = pointColor) +
   scale_y_reverse(limits = c(60, 20)) + #Ref: https://r-graphics.org/recipe-axes-reverse
   scale_x_continuous(  breaks    =c(2006, 2008, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021)
                        , labels = c(2006, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 2021)) +
