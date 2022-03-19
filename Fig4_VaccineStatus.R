@@ -36,7 +36,7 @@ p <- ggplot(df, aes(x=Percent, y=State)) +
   scale_x_continuous(position = "top", limits = c(0,120))  +
   guides(size = "none")  +      #To turn off size legend
   annotate("segment", x = 90, xend = 95, y = "Manipur", yend = "Nagaland", colour = titleColor, size=2, alpha=0.6, arrow=arrow()) +
-  geom_label( aes( x=82, y="Puducherry", label="Total\nvaccinations"), fill = labelFiller ,fontface = "bold", color= titleColor, size=5 , angle=45 ) +
+  geom_label( aes( x=82, y="Puducherry", label="Vaccinations\n(millions)"), fill = labelFiller ,fontface = "bold", color= titleColor, size=4.75 , angle=45 ) +
   
   
 # plotShaala theme
