@@ -11,7 +11,7 @@ displayResolution <- 600
 
 
 # set working directory and read the file
-setwd("<details of file path>")
+setwd("/Users/sanjaynoronha/Desktop/R/Github/R_charts")
 df <- read.csv("Fig1_WorldPollutedCities.csv")
 df <- df %>% arrange(desc(ranking))
 

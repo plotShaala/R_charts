@@ -46,7 +46,7 @@ p <- ggplot(df, aes(x=year, y= worth)) +
   scale_fill_manual(values = partyColor,  guide = "none") + 
   
   # colors for people and labels to be renamed
-  scale_colour_manual(values= personColor, labels = c(MD= "Median worth - Top 10 Indian billionaires",
+  scale_colour_manual(values= personColor, labels = c(MD= "Median worth - top 10 Indian billionaires",
   MA="Mukesh Ambani", GA="Gautam Adani"))+
   
   # annotation for the name of political party 
@@ -62,7 +62,7 @@ p <- ggplot(df, aes(x=year, y= worth)) +
   
   # customize the base theme
   labs(
-    title = "Stairway to Heaven"
+    title = "Stairway to heaven"
    , subtitle = "Yearly worth ($billion) - Mukesh Ambani, Gautam Adani v. the median worth\nof India's top 10 billionaires"
     , caption = c("Instagram: @plotShaala", "Source: Forbes" )
   ) +
@@ -91,7 +91,7 @@ p <- ggplot(df, aes(x=year, y= worth)) +
     , legend.background = element_blank()
   ) +
 
-theme(axis.title = element_text(size = 10)) + ylab('Worth ($billion)') + xlab('Year')
+theme(axis.title = element_text(size = 10)) + ylab('worth ($billion)') + xlab('year')
 
 # save plot in high resolution
 ggsave(plot = p,  width = 7.2, height = 6.4 ,dpi = displayResolution, filename = "Fig3_Billionaires_India.png")

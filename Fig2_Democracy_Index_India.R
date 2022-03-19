@@ -36,8 +36,8 @@ p <- ggplot(df, aes(x=year, y= rank)) +
   
   # customize the base theme
   labs(
-    title = "India, Democracy Index Rank Over the Years"
-    , subtitle = "India's rank among 167 countries. Data unavailable: 2007, 9"
+    title = "India, democracy index rank over the years"
+    , subtitle = "India's rank among 167 countries. Data unavailable in 2007, 9"
     , caption = c("Instagram: @plotShaala", "Source: EIU" )
   ) +
   
@@ -64,7 +64,7 @@ p <- ggplot(df, aes(x=year, y= rank)) +
     , legend.background = element_blank()
   ) +
   
-  theme(axis.title = element_text(size = 10)) + ylab('Rank') + xlab('Year')
+  theme(axis.title = element_text(size = 10)) + ylab('rank') + xlab('year')
 
 
 
