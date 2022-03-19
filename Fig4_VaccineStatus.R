@@ -4,7 +4,7 @@ library(dplyr)
 
 # Arrow reference : https://www.r-graph-gallery.com/233-add-annotations-on-ggplot2-chart.html
 
-# Variable
+# Variables
 typeColor <- c(State = "#05648A", "Union Territory" = "#02C39A") 
 titleColor <- "#444444"
 footerColor <- "#888888"  
@@ -16,7 +16,7 @@ displayResolution <- 600
 setwd("/Users/sanjaynoronha/Desktop/R/Github/R_charts")
 df <- read.csv("Fig4_VaccineStatus.csv")
 df <- df %>% arrange(desc(Percent))
-df
+
 
 # This function causes the State to be ordered
 # but this starts from the bottom of the axis
@@ -34,27 +34,26 @@ p <- ggplot(df, aes(x=Percent, y=State)) +
   annotate("label", x = 105 , y =  df$State,  label = paste(round(df$Total/1000000,2), 'm', sep = ''),  size = 4,fontface = "bold", fill = labelFiller, colour = "#444444") +
   scale_colour_manual(values= typeColor) +
   scale_x_continuous(position = "top", limits = c(0,120))  +
-  #xlim(0,120) +
   guides(size = "none")  +      #To turn off size legend
   annotate("segment", x = 90, xend = 95, y = "Manipur", yend = "Nagaland", colour = titleColor, size=2, alpha=0.6, arrow=arrow()) +
   geom_label( aes( x=82, y="Puducherry", label="Total\nvaccinations"), fill = labelFiller ,fontface = "bold", color= titleColor, size=5 , angle=45 ) +
   
   
-
+# plotShaala theme
 theme_fivethirtyeight() +
 
 # customize the base theme
 labs(
   title = "India COVID vaccination status"
-  , subtitle = "Data covers States and Union Territories"
-  , caption = c("Instagram: @plotShaala", "Source: Forbes. Data as of 6 Mar 2022" )
+  , subtitle = "States and Union Territories as of 6 MAR 2022"
+  , caption = c("Instagram: @plotShaala", "Source: COWIN, Vaccinate India" )
 ) +
   
   
   theme(
     plot.caption = element_text(hjust=c(1, 0), colour = footerColor, size = 16)
     , plot.title = element_text(colour = titleColor, hjust = 0.6, size = 20)
-    , plot.subtitle = element_text(colour = titleColor, hjust = 0.5, size = 18, face = "bold")
+    , plot.subtitle = element_text(colour = titleColor, hjust = 0.5, size = 17, face = "bold")
   ) +
   
   theme(
@@ -78,7 +77,9 @@ labs(
     , legend.background = element_blank()
   ) +
   
-  theme(axis.title = element_text(size = 16)) + xlab('% of population fully vaccinated (received both doses)') 
+  theme(axis.title.x = element_text(size = 16)) + 
+  xlab('% of population fully vaccinated (received both doses)') + 
+  ylab(NULL) 
 
 
 # save plot in high resolution
